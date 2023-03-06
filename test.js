@@ -19,7 +19,12 @@ function filterNums(arr) {
       filteredArr.push(arr[i]);
     }
   }
-  return filteredArr;
+
+  // Now I will work on sorting the filteredArr array into descending order
+  let sortedNumbers = filteredArr.sort((a, b) => b - a);
+
+  // And finally return the newly sorted array
+  return sortedNumbers;
 }
 
 console.log(filterNums([1, 2, 3, 4, 5, 5, 6, 6, 7]));
