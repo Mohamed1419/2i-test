@@ -23,8 +23,14 @@ function filterNums(arr) {
   // Now I will work on sorting the filteredArr array into descending order
   let sortedNumbers = filteredArr.sort((a, b) => b - a);
 
-  // And finally return the newly sorted array
-  return sortedNumbers;
+  // And finally return the newly sorted array and see if it should log an error based on the conditions provided
+  if (arr.length > 10) {
+    console.log("The array has more than 10 numbers!");
+  } else if (arr.length < 10) {
+    console.log("This array has less than 10 numbers");
+  } else {
+    return sortedNumbers;
+  }
 }
 
 console.log(filterNums([1, 2, 3, 4, 5, 5, 6, 6, 7]));
