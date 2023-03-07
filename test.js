@@ -23,14 +23,23 @@ function filterNums(arr) {
   // Now I will work on sorting the filteredArr array into descending order
   let sortedNumbers = filteredArr.sort((a, b) => b - a);
 
-  // And finally return the newly sorted array and see if it should log an error based on the conditions provided
+  // And finally return the newly sorted array and see if it should throw an error based on the conditions provided
+
+  // Checks if array has appropriate amount of elements
   if (arr.length > 10) {
     console.log("The array has more than 10 numbers!");
   } else if (arr.length < 10) {
     console.log("This array has less than 10 numbers");
+  } // Checks if array elements are within boundary
+  else if (
+    arr.some((element) => {
+      return element > 100 || element < 1;
+    })
+  ) {
+    console.log("There is an element outside the 1-100 boundary.");
   } else {
     return sortedNumbers;
   }
 }
 
-console.log(filterNums([1, 2, 3, 4, 5, 5, 6, 6, 7]));
+console.log(filterNums([1, 2, 3, 4, 5, 5, 6, 6, 7, 100]));
